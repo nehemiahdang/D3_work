@@ -122,6 +122,7 @@ function makeResponsive() {
     // Create a function to for the d3 tool tip and it based on the options
     function updateToolTip(activeXAxis, activeYAxis, circlesGroup) {
         
+        // Create an empty variable to update it with conditions
         var xLabel;
         if (activeXAxis === "poverty") {
             xLabel = "Poverty: ";
@@ -167,7 +168,10 @@ function makeResponsive() {
     }
 
     // Import the CSV file
-    d3.csv("/assets/data/data.csv").then(function(paperData) {
+    d3.csv("/assets/data/data.csv").then(function(paperData, err) {
+        if (err) throw err;
+
+        // Print the data into the console
         console.log(paperData);
         // console.log(paperData.map(data => data.poverty));
 
