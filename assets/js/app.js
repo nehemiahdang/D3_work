@@ -150,8 +150,8 @@ function makeResponsive() {
         .offset([80, -60])
         .html(function(d) {
             return (`${d.state}<br>
-            ${xLabel} ${d[activeXAxis]}<br>
-            ${yLabel} ${d[activeYAxis]}`);
+            ${xLabel} ${d[activeXAxis]}%<br>
+            ${yLabel} ${d[activeYAxis]}%`);
         });
 
         circlesGroup.call(toolTip);
